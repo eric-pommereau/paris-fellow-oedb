@@ -12,7 +12,7 @@ Source : http://www.summerfellows.paris/
 
 <img src="/img/oedb-logo.png" width="250">
 
-I woul'd like to work on [OpenEventDatabase (OEDB)](https://github.com/openeventdatabase) project whith Christian Quest, OpenStreetMap France association president and who designed OEDB.
+Working on [OpenEventDatabase (OEDB)](https://github.com/openeventdatabase) project whith Christian Quest, OpenStreetMap France association president and designer of OEDB project.
 
 OEDB project is also related to [geoalerte](https://github.comcommunaute-cimi/nm-geoalerte-back), project designed by a team during the hackathon "Nec Mergitur" organized by city of Paris and "préfecture de police".
 
