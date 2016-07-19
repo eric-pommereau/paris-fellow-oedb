@@ -10,7 +10,7 @@ Source : http://www.summerfellows.paris/
 
 ## My goal
 
-<img src="/img/oedb-logo.png" width="700">
+<img src="/img/oedb-logo.png" width="250">
 
 I woul'd like to work on [OpenEventDatabase (OEDB)](https://github.com/openeventdatabase) project whith Christian Quest, OpenStreetMap France association president and who designed OEDB.
 
