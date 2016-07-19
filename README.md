@@ -28,9 +28,9 @@ Many things actually like :
 * improving front-end
 * ...
 
-## links
+## Links
 
-* [First document (hackpad) ](https://cquest.hackpad.com/openeventdatabase.org-0sqdV6KBCqD)
+* [OEDB First documentation (hackpad) by Cquest ](https://cquest.hackpad.com/openeventdatabase.org-0sqdV6KBCqD)
 * [OEBD BackEnd Wiki](https://github.com/openeventdatabase/backend/wiki)
 * [OEDB Twitter account](https://twitter.com/openEventDb)
 * [Event Brite API](https://www.eventbrite.com/developer/v3/formats/event/#ebapi-std:format-event)
