@@ -1,11 +1,16 @@
 # Contributions for Paris summer innovation fellowship
 
+<img src="/img/paris-fellows-start-page.png" width="700">
+
+
 > The Paris Summer Innovation Fellowship is a two-week immersive program focused on empowering our next generation of city problem-solvers: data scientists, DIY urban designers and open street mappers.
 > The fellowship covers a financial stipend, access to world-class mentors, co-working space, special tools--no strings attached. Over a period of two weeks, this program will equip a small group of 20 creative and talented individuals to begin building solutions to the challenges facing Paris today.
 
 Source : http://www.summerfellows.paris/
 
 ## My goal
+
+<img src="/img/oedb-logo.png" width="700">
 
 I woul'd like to work on [OpenEventDatabase (OEDB)](https://github.com/openeventdatabase) project whith Christian Quest, OpenStreetMap France association president and who designed OEDB.
 
