@@ -13,7 +13,7 @@ See documentation on openstreetmap wiki : http://wiki.openstreetmap.org/wiki/UMa
 
 It's possible to create a map linked to OpenEventDatabase stream (datas)
 
-### openning umap
+### opening umap
 Open [uMap](http://umap.openstreetmap.fr/fr/) and register, you can choose a provider (OpenStreetMap, GitHub, BitBucket or twitter at the moment).
 
 <img src="./img/first-map.jpg" width="500">
