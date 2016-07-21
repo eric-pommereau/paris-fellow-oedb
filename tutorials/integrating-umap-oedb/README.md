@@ -19,27 +19,29 @@ Open [uMap](http://umap.openstreetmap.fr/fr/) and register, you can choose a pro
 <img src="./img/first-map.jpg" width="500">
 
 ### create a new map and quick settings
-Click on "create a map"
+Click on "create a map", you can
 
-Changing basemap : 
+####Change basemap
 
 <img src="./img/basemap-panel.jpg" width="500">
 
-Editing properties : 
+####Edit properties : 
 
 <img src="./img/properties-map.jpg" width="500">
 
+Now we want to add datas...
+
 ### adding OpenEventDB datas
 
-Just let me take an exemple, soccer competition "euro 2016".
+Just let me take an exemple, **soccer competition "euro 2016"**.
 
 To generate the stream it's quiet simple, just with an URL : http://api.openeventdatabase.org/event?what=sport.match.soccer.euro2016&start=2016-06-10&stop=2016-07-14
 
-URL defines 2 filters : 
+URL actually defines 2 filters : 
 - when : start=2016-06-10&stop=2016-07-14
 - what : sport.match.soccer.euro2016
 
-And define the format : geojson.
+Finally you have to define geojson format (default geojson).
 
 <img src="./img/importing-oedb-settings.jpg" width="500">
 
@@ -55,15 +57,25 @@ By default key "name" is default field diplayed in popup.
 
 If you want to diplay another field (or more) you can do it by customizing popup options.
 
-It's quiet simple key under brackets like {label} and you can also use markdown for formatting
+It's quiet simple, you just have to type keys under brackets like {label}. That will bind datas if keys exists. Note that markdown format is supported for formatting, thats very flexible.
 
-Remember : you must desactivate edition to see result (allow click to popup)
+**You must desactivate edition to see result (allow click to popup)**
 
 <img src="./img/customize-popup.jpg" width="500">
 
 ###Creating a realtime layer
 
-Last events
+The last exemple (euro 2016) is cool but only display static content.
+
+You can also use live datas just in selecting the right filters (and a live datasource).
+
+Exemple : today accidents
+
+API offers special filters for when like last5minutes, today, lastmonth...
+
+You just have to take the previos sample with this URL : http://api.openeventdatabase.org/event?what=traffic.accident&when=today 
+
+<img src="./img/live-accidents.jpg" width="500">
 
 ## Links 
 
