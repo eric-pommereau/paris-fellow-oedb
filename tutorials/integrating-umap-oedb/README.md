@@ -14,12 +14,12 @@ See documentation on openstreetmap wiki : http://wiki.openstreetmap.org/wiki/UMa
 It's possible to create a map linked to OpenEventDatabase stream (datas)
 
 ### opening umap
-Open [uMap](http://umap.openstreetmap.fr/fr/) and register, you can choose a provider (OpenStreetMap, GitHub, BitBucket or twitter at the moment).
+Open [uMap](http://umap.openstreetmap.fr/fr/) and register and choose a provider (OpenStreetMap, GitHub, BitBucket or twitter at the moment).
 
 <img src="./img/first-map.jpg" width="500">
 
 ### create a new map and quick settings
-Click on "create a map", you can
+Click on "create a map", you can :
 
 ####Change basemap
 
