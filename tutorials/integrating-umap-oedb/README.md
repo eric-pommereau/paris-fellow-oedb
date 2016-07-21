@@ -41,7 +41,7 @@ URL actually defines 2 filters :
 - when : start=2016-06-10&stop=2016-07-14
 - what : sport.match.soccer.euro2016
 
-Finally you have to define geojson format (default geojson).
+Click on import datas button, paste URL and choose geojson format (default format on OEDB).
 
 <img src="./img/importing-oedb-settings.jpg" width="500">
 
