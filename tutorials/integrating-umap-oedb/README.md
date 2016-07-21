@@ -75,7 +75,7 @@ API offers special filters for when like last5minutes, today, lastmonth...
 
 You just have to take the previos sample with this URL : http://api.openeventdatabase.org/event?what=traffic.accident&when=today 
 
-<img src="./img/live-accidents.jpg" width="500">
+<img src="./img/live-accidents.png" width="500">
 
 ## Links 
 
