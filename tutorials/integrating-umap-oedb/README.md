@@ -6,7 +6,7 @@
 
 See documentation on openstreetmap wiki : http://wiki.openstreetmap.org/wiki/UMap
 
-<img src="/img/umap-start.jpg" width="700">
+<img src="./img/umap-start.jpg" width="700">
 
 
 ## A map with OpenEventDB datas
@@ -16,18 +16,18 @@ It's possible to create a map linked to OpenEventDatabase stream (datas)
 ### openning umap
 Open [uMap](http://umap.openstreetmap.fr/fr/) and register, you can choose a provider (OpenStreetMap, GitHub, BitBucket or twitter at the moment).
 
-<img src="/img/first-map.jpg" width="500">
+<img src="./img/first-map.jpg" width="500">
 
 ### create a new map and quick settings
 Click on "create a map"
 
 Changing basemap : 
 
-<img src="/img/basemap-panel.jpg" width="500">
+<img src="./img/basemap-panel.jpg" width="500">
 
 Editing properties : 
 
-<img src="/img/properties-map.jpg" width="500">
+<img src="./img/properties-map.jpg" width="500">
 
 ### adding OpenEventDB datas
 
@@ -41,11 +41,11 @@ URL defines 2 filters :
 
 And define the format : geojson.
 
-<img src="/img/importing-oedb-settings.jpg" width="500">
+<img src="./img/importing-oedb-settings.jpg" width="500">
 
 Click on "Import" and enjoy the result...
 
-<img src="/img/import-oedb-dataset.jpg" width="500">
+<img src="./img/import-oedb-dataset.jpg" width="500">
 
 ###Customize popups
 
@@ -59,7 +59,7 @@ It's quiet simple key under brackets like {label} and you can also use markdown 
 
 Remember : you must desactivate edition to see result (allow click to popup)
 
-<img src="/img/customize-popup.jpg" width="500">
+<img src="./img/customize-popup.jpg" width="500">
 
 ###Creating a realtime layer
 
@@ -67,9 +67,7 @@ Last events
 
 ## Links 
 
-Editing filters 
-
-https://github.com/openeventdatabase/backend/wiki
+Editing filters doc : https://github.com/openeventdatabase/backend/wiki
 
 
 
