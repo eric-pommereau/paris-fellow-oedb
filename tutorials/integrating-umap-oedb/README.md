@@ -13,25 +13,25 @@ See documentation on openstreetmap wiki : http://wiki.openstreetmap.org/wiki/UMa
 
 It's possible to create a map linked to OpenEventDatabase stream (datas)
 
-### opening umap
+### Open umap
 Open [uMap](http://umap.openstreetmap.fr/fr/) and register and choose a provider (OpenStreetMap, GitHub, BitBucket or twitter at the moment).
 
 <img src="./img/first-map.jpg" width="500">
 
-### create a new map and quick settings
+### Create a new map and quick settings
 Click on "create a map", you can :
 
-####Change basemap
+#### Change basemap
 
 <img src="./img/basemap-panel.jpg" width="500">
 
-####Edit properties : 
+#### Edit properties : 
 
 <img src="./img/properties-map.jpg" width="500">
 
 Now we want to add datas...
 
-### adding OpenEventDB datas
+### Adding OpenEventDB datas
 
 Just let me take an exemple, **soccer competition "euro 2016"**.
 
@@ -49,7 +49,7 @@ Click on "Import" and enjoy the result...
 
 <img src="./img/import-oedb-dataset.jpg" width="500">
 
-###Customize popups
+### Customize popups
 
 Now we have events diplayed on map but no popup on click...
 
@@ -63,7 +63,7 @@ It's quiet simple, you just have to type keys under brackets like {label}. That 
 
 <img src="./img/customize-popup.jpg" width="500">
 
-###Creating a realtime layer
+### Create a realtime layer
 
 The last exemple (euro 2016) is cool but only display static content.
 
@@ -79,11 +79,4 @@ You just have to take the previos sample with this URL : http://api.openeventdat
 
 ## Links 
 
-Editing filters doc : https://github.com/openeventdatabase/backend/wiki
-
-
-
-
-
-
-
+- Editing filters doc : https://github.com/openeventdatabase/backend/wiki
