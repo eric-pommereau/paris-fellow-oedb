@@ -65,7 +65,7 @@ It's quiet simple, you just have to type keys under brackets like {label}. That 
 
 ### Create a realtime layer
 
-The last exemple (euro 2016) is cool but only display static content.
+The last example (euro 2016) is cool but only display static content.
 
 You can also use live datas just in selecting the right filters (and a live datasource).
 
