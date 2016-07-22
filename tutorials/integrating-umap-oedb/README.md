@@ -1,4 +1,4 @@
-# Create OpenEventDB map with uMap
+# Create an OpenEventDB map with uMap
 
 ## Umap
 
