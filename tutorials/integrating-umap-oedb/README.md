@@ -1,4 +1,4 @@
-# Create OpenEventDB map with uMap
+# Create an OpenEventDB map with uMap
 
 ## Umap
 
@@ -33,7 +33,7 @@ Now we want to add datas...
 
 ### Adding OpenEventDB datas
 
-Just let me take an exemple, **soccer competition "euro 2016"**.
+Just let me take an example, **soccer competition "euro 2016"**.
 
 To generate the stream it's quiet simple, just with an URL : http://api.openeventdatabase.org/event?what=sport.match.soccer.euro2016&start=2016-06-10&stop=2016-07-14
 
@@ -65,11 +65,11 @@ It's quiet simple, you just have to type keys under brackets like {label}. That 
 
 ### Create a realtime layer
 
-The last exemple (euro 2016) is cool but only display static content.
+The last example (euro 2016) is cool but only display static content.
 
 You can also use live datas just in selecting the right filters (and a live datasource).
 
-Exemple : today accidents
+Example : today accidents
 
 API offers special filters for when like last5minutes, today, lastmonth...
 
