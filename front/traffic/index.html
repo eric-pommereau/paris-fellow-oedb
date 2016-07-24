@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Détail d'un événement </title>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/json-editor/0.7.25/jsoneditor.min.js"></script>
+
+		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+
+		<link rel="stylesheet" id="icon_stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+		<script>
+			var map;	
+			var geojsonLayer=L.geoJson();	
+			var greenIcon;
+			var legend = L.control({position: 'bottomright'});
+			
+			
+			function init() {
+				
+				var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+					osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+					osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+				map = new L.Map('map', {layers: [osm], center: new L.LatLng(46.9886, 2.08740), zoom: 6 });
+				
+				var legend = L.control({position: 'bottomright'});
+
+				legend.onAdd = function (map) {
+				
+				    var div = L.DomUtil.create('div', 'info legend');
+
+					div.innerHTML = '<button type="button" onclick="showTrafficEvents()" class="btn btn-primary" aria-label="Left Align">' + 
+  									'<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>' + 
+									'</button>';
+				
+				    return div;
+				};
+				
+				legend.addTo(map);
+				
+				showTrafficEvents();
+			};
+			
+			function showTrafficEvents() {
+				geojsonLayer.clearLayers();
+				var endpoint="http://api.openeventdatabase.org/event?";
+				var box = [map.getBounds()._northEast.lng,map.getBounds()._southWest.lat,map.getBounds()._southWest.lng,map.getBounds()._northEast.lat];
+				var bbox = box.join(",");
+				
+				var reqDatas =  jQuery.param({
+    	    		"what": "traffic", 
+    	    		"when":"last1hours"
+        		});
+        			
+        		$.ajax({
+        			headers: {},
+		            url : endpoint,
+		            data: reqDatas,
+		            dataType : 'json'
+		        }).done(function(events) {
+            		console.log( events);
+            		geojsonLayer = L.geoJson(events, {
+					    pointToLayer: pointToLayer
+					}).addTo(map);
+					map.fitBounds(geojsonLayer.getBounds());
+				});
+				
+				function pointToLayer(feature, latlng) {
+
+					var icon =  L.icon();
+					var iconDefault =  L.icon({ iconUrl: './mapicons-collection/car.png', iconSize:[32, 37]});
+					var iconAccident =  L.icon({ iconUrl: './mapicons-collection/caraccident.png', iconSize:[32, 37]});
+					var iconJam = L.icon({ iconUrl: './mapicons-collection/trafficlight.png', iconSize:[32, 37]});
+					var iconFire = L.icon({ iconUrl: './mapicons-collection/fire.png', iconSize:[32, 37]});
+					var iconObtacle = L.icon({ iconUrl: './mapicons-collection/caution.png', iconSize:[32, 37]});
+
+					if(feature.properties && feature.properties.what) {
+						switch (feature.properties.what) {
+							case 'traffic.accident' : icon = iconAccident; break;
+							case 'traffic.jam' : icon = iconJam; break;
+							case 'traffic.fire' : icon = iconFire; break;
+							case 'traffic.obstacle' : icon = iconObtacle; break;
+							default : icon = iconDefault; break;
+						}
+					}
+					
+					dt = new Date(feature.properties.createdate);
+					popup = "<b>" + feature.properties.label + "</b>" + 
+        					"<br />Date : " + dt.toLocaleDateString() + ' ' + dt.toLocaleTimeString() +
+        					"</b><br />What : " + feature.properties.what + 
+        					"</b><br />Source : " + feature.properties.source; 
+					
+					return L.marker(latlng, {"icon": icon}).addTo(map).bindPopup(popup);
+				
+				}
+			}
+			
+			function icons() {
+				greenIcon = L.icon({
+				    iconUrl: './mapicons-collection/love_date.png',
+				    iconSize:     [32, 37]
+				});
+				
+				
+			}
+		</script>
+	</head>
+	<body onload="init();return 0">
+		<div id="map" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+	</body>
+</html>
