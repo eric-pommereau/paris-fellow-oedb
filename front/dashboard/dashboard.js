@@ -27,10 +27,7 @@ function init() {
         osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
     map = new L.Map('map', {layers: [osm], center: new L.LatLng(46.9886, 2.08740), zoom: 6 });
 
-    for(var i=0;i<preDefinedEvents.length;i++) {
-        item = preDefinedEvents[i];
-        updateEvents(item.reqDatas, item.btn, false);
-    }
+    updateAllEvents();
 
     $("#btn_total_5_min").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last5minutes"});
@@ -65,6 +62,13 @@ function init() {
 
 }
 
+function updateAllEvents() {
+    for(var i=0;i<preDefinedEvents.length;i++) {
+        item = preDefinedEvents[i];
+        updateEvents(item.reqDatas, item.btn, false);
+    }
+}
+
 function updateEvents(reqDatas, targetId, bFitBounds) {
     // console.log(reqDatas, targetId);
     $.ajax({
@@ -93,7 +97,8 @@ function updateMap(targetId, events, fitBounds) {
         });
         popup = "<b>" + feature.properties.name + "</b>" + 
                 "<br />What : " + feature.properties.what + 
-                "<br />Source : " + feature.properties.source; 
+                "<br />Source : " + feature.properties.source + 
+                "<br />Start : " + feature.properties.start; 
         return marker.addTo(map).bindPopup(popup);
     }}).addTo(map);
     

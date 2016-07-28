@@ -1,6 +1,8 @@
 # OpenEventDatabase dashbord
 
-## Filter used
+Shows different kind of datas... live
+
+## Filters used
 
 * All events, last 5 minutes
 * Traffic, last 30 minutes
