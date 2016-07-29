@@ -104,19 +104,30 @@ function updateMap(targetId, events, fitBounds) {
             })
         });
         
-        var title = ''
-        if (feature.properties.name != 'undefined') title += feature.properties.name; 
-        if (feature.properties.label != 'undefined') title += ' ' + feature.properties.label;
+        console.log(feature.properties.name, feature.properties.label);
+        
+        var title = '';
+        if (feature.properties.name != undefined) title += feature.properties.name; 
+        if (feature.properties.label != undefined) title += ' ' + feature.properties.label;
         
         if(title=='') title = feature.properties.what;
+        
+        var dt = '';
+        if(feature.properties.start != undefined) {
+                dt = "<br />Start : " + feature.properties.start; 
+                dt += "<br />Stop : " + feature.properties.start;                 
+        }else {
+            dt = "<br />When : " + feature.properties.when; 
+        }
         
         popup = "<b>" + title + "</b>" + 
                 "<br />What : " + feature.properties.what + 
                 "<br />Source : " + feature.properties.source + 
-                "<br />Start : " + feature.properties.start; 
-                "<br />Stop : " + feature.properties.start; 
-                "<br />Type : " + feature.properties.type; 
+                dt + 
+                "<br />Type : " + feature.properties.type;
+                 
         return marker.addTo(map).bindPopup(popup);
+        
     }}).addTo(map);
     
     evt.layer.bringToFront();
