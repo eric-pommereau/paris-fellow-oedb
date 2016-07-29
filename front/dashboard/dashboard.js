@@ -31,31 +31,38 @@ function init() {
 
     $("#btn_total_5_min").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last5minutes"});
+        clearCount('btn_total_5_min');clearLayer('btn_total_5_min');
         updateEvents(reqDatas, 'btn_total_5_min', true);
     });
     
     $("#btn_traffic_1_hour").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last30minutes", "what":"traffic", "near":"2.36,48.85,20000"});
+        clearCount('btn_traffic_1_hour');clearLayer('btn_traffic_1_hour');
         updateEvents(reqDatas, 'btn_traffic_1_hour', true);
     });
     
+    
     $("#btn_nature_2_days").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last48hours", "what":"nature"});
+        clearCount('btn_nature_2_days');clearLayer('btn_nature_2_days');
         updateEvents(reqDatas, 'btn_nature_2_days', true);
     });    
     
     $("#btn_weather_12_hours").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last12hours", "what":"weather", "near":"2.36,48.85,20000"});
+        clearCount('btn_weather_12_hours');clearLayer('btn_weather_12_hours');
         updateEvents(reqDatas, 'btn_weather_12_hours', true);
     });        
 
     $("#btn_health_blood_12_hours").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last12hours", "what":"health.blood.collect"});
+        clearCount('btn_health_blood_12_hours');clearLayer('btn_health_blood_12_hours');
         updateEvents(reqDatas, 'btn_health_blood_12_hours', true);
     });
     
     $("#btn_transports_6_hours").click(function(event) {
         var reqDatas =  jQuery.param({"when":"last6hours", "what":"public_transport"});
+        clearCount('btn_transports_6_hours');clearLayer('btn_transports_6_hours');
         updateEvents(reqDatas, 'btn_transports_6_hours', true);
         
     });
@@ -65,6 +72,7 @@ function init() {
 function updateAllEvents() {
     for(var i=0;i<preDefinedEvents.length;i++) {
         item = preDefinedEvents[i];
+        clearCount(item.btn);clearLayer(item.btn);
         updateEvents(item.reqDatas, item.btn, false);
     }
 }
@@ -83,8 +91,9 @@ function updateEvents(reqDatas, targetId, bFitBounds) {
         });
 }
 
+
 function updateMap(targetId, events, fitBounds) {
-    console.log(targetId, events, fitBounds);
+    // console.log(targetId, events, fitBounds);
     evt = getPredefinedEvent(targetId);
     evt.layer.clearLayers();
     // console.log(evt.layer);
@@ -105,8 +114,26 @@ function updateMap(targetId, events, fitBounds) {
     evt.layer.bringToFront();
     
     if(fitBounds == true) {
-        console.log(fitBounds);
+        // console.log(fitBounds);
         map.fitBounds(evt.layer.getBounds());    
     }
     
 }
+
+
+function clearCount(targetId) {
+    $("#"+ targetId + " .count").html('-');
+}
+
+function clearLayer(targetId) {
+    evt = getPredefinedEvent(targetId);
+    evt.layer.clearLayers();
+}
+
+function clearAllEvents() {
+    for(var i=0;i<preDefinedEvents.length;i++) {
+        item = preDefinedEvents[i];
+        clearCount(item.btn);clearLayer(item.btn); 
+    }
+}
+

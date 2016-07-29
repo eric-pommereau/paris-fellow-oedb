@@ -13,5 +13,12 @@ Different kind of datas, way to filter... live
 * Health, last 12 hours
 * Transports, last 6 hours
 
+## Components
+
+* Based on dashboard template : gentella --> https://colorlib.com/polygon/gentelella/index.html
+* Bootstrap
+* JQuery
+* Leaflet
+* Plugins : Leaflet.Icon.Glyph.js
 
 
