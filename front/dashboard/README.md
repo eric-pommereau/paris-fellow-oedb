@@ -1,6 +1,8 @@
-# OpenEventDatabase dashbord
+# OpenEventDatabase dashboard
 
-Shows different kind of datas... live
+<img src="img/Screenshot.jpg" width="700">
+
+Different kind of datas, way to filter... live
 
 ## Filters used
 
