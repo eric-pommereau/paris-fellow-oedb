@@ -66,7 +66,6 @@ function init() {
         updateEvents(reqDatas, 'btn_transports_6_hours', true);
         
     });
-
 }
 
 function updateAllEvents() {
@@ -104,10 +103,19 @@ function updateMap(targetId, events, fitBounds) {
                 glyph: evt.glyph
             })
         });
-        popup = "<b>" + feature.properties.name + "</b>" + 
+        
+        var title = ''
+        if (feature.properties.name != 'undefined') title += feature.properties.name; 
+        if (feature.properties.label != 'undefined') title += ' ' + feature.properties.label;
+        
+        if(title=='') title = feature.properties.what;
+        
+        popup = "<b>" + title + "</b>" + 
                 "<br />What : " + feature.properties.what + 
                 "<br />Source : " + feature.properties.source + 
                 "<br />Start : " + feature.properties.start; 
+                "<br />Stop : " + feature.properties.start; 
+                "<br />Type : " + feature.properties.type; 
         return marker.addTo(map).bindPopup(popup);
     }}).addTo(map);
     
