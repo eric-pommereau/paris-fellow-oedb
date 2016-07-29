@@ -103,9 +103,7 @@ function updateMap(targetId, events, fitBounds) {
                 glyph: evt.glyph
             })
         });
-        
-        console.log(feature.properties.name, feature.properties.label);
-        
+                
         var title = '';
         if (feature.properties.name != undefined) title += feature.properties.name; 
         if (feature.properties.label != undefined) title += ' ' + feature.properties.label;
